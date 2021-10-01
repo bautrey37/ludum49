@@ -15,14 +15,14 @@ public class GameController : MonoBehaviour
         Events.OnRequestValue += OnRequestValue;
         Events.OnEndLevel += OnEndLevel;
 
-        BackgroundMusic.PlayBackground();
+        // BackgroundMusic.PlayBackground();
     }
 
     public void Update()
     {
         if (endLevel == true)
         {
-            BackgroundMusic.StopBackground();
+            // BackgroundMusic.StopBackground();
         }
     }
 
