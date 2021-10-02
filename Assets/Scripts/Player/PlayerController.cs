@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour
 
         if (transform.eulerAngles.z >  180 && transform.eulerAngles.z <= 360)
 	        rb.AddTorque(rotSpeed * Time.deltaTime, ForceMode2D.Force);
-        else if (transform.eulerAngles.z > 0 && transform.eulerAngles.z <= 180) 
+        else if (transform.eulerAngles.z > 0 && transform.eulerAngles.z <= 180)
             rb.AddTorque(-rotSpeed * Time.deltaTime, ForceMode2D.Force);
     }
 
@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
 		{
             horizontal = Input.GetAxis("Horizontal");
             vertical = Input.GetAxis("Vertical");
-        } 
+        }
 
         else if (currentControls == Controls.Reversed)
 		{
@@ -82,5 +82,12 @@ public class PlayerController : MonoBehaviour
             hud.SetControlsReversed();
         }
 
+    }
+
+    public void FellInHole()
+    {
+        // TODO: play dying sound
+        Debug.Log("Player has fell in hole");
+        Events.EndLevel(false);
     }
 }

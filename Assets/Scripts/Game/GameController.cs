@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
     public int Value = 0;
     public AudioClipGroup BackgroundMusic;
 
+    private SceneLoader sceneLoader;
     private bool endLevel = false;
 
     private void Awake()
@@ -15,20 +17,22 @@ public class GameController : MonoBehaviour
         Events.OnRequestValue += OnRequestValue;
         Events.OnEndLevel += OnEndLevel;
 
-        // BackgroundMusic.PlayBackground();
-    }
 
-    public void Update()
-    {
-        if (endLevel == true)
-        {
-            // BackgroundMusic.StopBackground();
-        }
+        // BackgroundMusic.PlayBackground();
     }
 
     public void Start()
     {
         Events.SetValue(Value);
+        sceneLoader = gameObject.GetComponent<SceneLoader>();
+    }
+
+    public void Update()
+    {
+        // if (endLevel == true)
+        // {
+            // BackgroundMusic.StopBackground();
+        // }
     }
 
     private void OnDestroy()
@@ -48,14 +52,12 @@ public class GameController : MonoBehaviour
         return Value;
     }
 
-    void OnHealthDestroyed(GameObject go)
+    private void OnEndLevel(bool isWin)
     {
-
-    }
-
-    void OnEndLevel(bool isWin)
-    {
-        endLevel = true;
+        Debug.Log("End level");
+        // restart scene
+        sceneLoader.restartScene();
+        endLevel = isWin;
     }
 
 }
