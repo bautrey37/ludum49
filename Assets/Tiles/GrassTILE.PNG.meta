@@ -49,11 +49,7 @@ TextureImporter:
   spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
-<<<<<<< HEAD
   alphaUsage: 1
-=======
-  alphaUsage: 0
->>>>>>> character-dev
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
@@ -69,11 +65,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-<<<<<<< HEAD
     maxTextureSize: 2048
-=======
-    maxTextureSize: 32
->>>>>>> character-dev
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -85,11 +77,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-<<<<<<< HEAD
     maxTextureSize: 2048
-=======
-    maxTextureSize: 32
->>>>>>> character-dev
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
