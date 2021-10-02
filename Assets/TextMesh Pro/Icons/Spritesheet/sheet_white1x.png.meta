@@ -20,6 +20,9 @@ TextureImporter:
   - first:
       213: -8919547584617180429
     second: ArrowUp
+  - first:
+      213: 5511827941926427188
+    second: tutorial
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -222,7 +225,7 @@ TextureImporter:
         width: 43
         height: 38
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -230,6 +233,27 @@ TextureImporter:
       bones: []
       spriteID: 3f213b5cab6673480800000000000000
       internalID: -8919547584617180429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tutorial
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 64
+        width: 50
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43ad89d6f42fd7c40800000000000000
+      internalID: 5511827941926427188
       vertices: []
       indices: 
       edges: []
