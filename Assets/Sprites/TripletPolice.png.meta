@@ -1,4 +1,5 @@
 fileFormatVersion: 2
+
 guid: e93090b20a568df44a354c6fae7ea304
 TextureImporter:
   internalIDToNameTable:
@@ -14,6 +15,7 @@ TextureImporter:
   - first:
       213: -2636022884473830716
     second: TripletPolice_3
+
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -53,7 +55,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -87,6 +89,7 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+
   - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
@@ -186,6 +189,7 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+
     outline: []
     physicsShape: []
     bones: []

@@ -239,11 +239,10 @@ RectTransform:
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.08981437, y: 0.6692612}
-  m_AnchorMax: {x: 0.08981437, y: 0.8383695}
-  m_AnchoredPosition: {x: -26.001007, y: 2.248001}
-  m_SizeDelta: {x: 50, y: -3}
-
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.08981437, y: 0.82236946}
+  m_AnchoredPosition: {x: 0.5050049, y: 2}
+  m_SizeDelta: {x: 50, y: 2}
+  m_Pivot: {x: 1, y: 1}
 --- !u!1 &465268670
 GameObject:
   m_ObjectHideFlags: 0
@@ -344,8 +343,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0765, y: -9.2872}
-  m_SizeDelta: {x: 329.4406, y: 137.3118}
+  m_AnchoredPosition: {x: 1.392, y: -7.9336}
+  m_SizeDelta: {x: 341.1892, y: 140.02}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &662096349
 MonoBehaviour:
@@ -367,7 +366,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: "Usage Guide \nReach home avoiding obstacles in 3 min. \nControllers: wasd.\nBe
+    aware! controllers are unpredictable.\nDrinking alcohol harms your health"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e60982937240a3bc786bff3b3dad6f7b, type: 2}
   m_sharedMaterial: {fileID: -1755049229113375946, guid: e60982937240a3bc786bff3b3dad6f7b, type: 2}
@@ -430,7 +430,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0.29632568, w: -1.6615143}
+  m_margin: {x: 0, y: -20.560059, z: 0.29632568, w: -1.6615143}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -801,11 +801,10 @@ RectTransform:
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.08981437, y: 0.6692612}
-  m_AnchorMax: {x: 0.08981437, y: 0.8383695}
-  m_AnchoredPosition: {x: -26.484, y: 2.252}
-  m_SizeDelta: {x: 50, y: -3}
-
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.08981437, y: 0.82236946}
+  m_AnchoredPosition: {x: 0.5050049, y: 2}
+  m_SizeDelta: {x: 50, y: 2.0996}
+  m_Pivot: {x: 1, y: 1}
 --- !u!114 &1027891389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -934,8 +933,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 101.07001, y: -25}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 103.23131, y: -27.161316}
+  m_SizeDelta: {x: 204.3226, y: 54.3226}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1233764777
 MonoBehaviour:
@@ -957,7 +956,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: 'Timer
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e60982937240a3bc786bff3b3dad6f7b, type: 2}
   m_sharedMaterial: {fileID: -1755049229113375946, guid: e60982937240a3bc786bff3b3dad6f7b, type: 2}
@@ -984,14 +985,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 34.25
+  m_fontSize: 37.2
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -1408,10 +1409,9 @@ RectTransform:
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.1876306}
-  m_AnchorMax: {x: 0.08981437, y: 0.8383695}
-  m_AnchoredPosition: {x: -0.743042, y: -25.36}
-  m_SizeDelta: {x: -1.4830017, y: -47.987305}
-
+  m_AnchorMax: {x: 0.08981437, y: 0.6692612}
+  m_AnchoredPosition: {x: 0.32852173, y: -2.6060028}
+  m_SizeDelta: {x: -1.4830017, y: 5.0126953}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1652066027
 MonoBehaviour:

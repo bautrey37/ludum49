@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 250474063}
   - component: {fileID: 250474061}
   - component: {fileID: 250474065}
+  - component: {fileID: 250474062}
   m_Layer: 5
   m_Name: Menu
   m_TagString: Untagged
@@ -177,7 +178,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b48120fabe9ef4579b55da408d1a85cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Volume: {fileID: 2056536689}
+  VolumeSlider: {fileID: 2056536689}
+  TitleAudio: {fileID: 11400000, guid: 10857028ded1caf999b5b384adeb3635, type: 2}
+--- !u!114 &250474062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 250474059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fbeea2d9af682b79bd2e6e0dfded209, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AudioSourcePrefab: {fileID: 8871145115118272125, guid: 485c3a82621e42778b6a230400c0cafc, type: 3}
 --- !u!114 &250474063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1866,6 +1881,18 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 100
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 250474061}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: UpdateTitleVolume
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
