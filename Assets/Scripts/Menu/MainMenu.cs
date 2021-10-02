@@ -6,31 +6,32 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public Slider Volume;
+    public Slider VolumeSlider;
+    public BackgroundAudio TitleAudio;
 
-    // private void Awake()
-    // {
-    //     Volume = gameObject.GetComponent<Slider>();
-    // }
+    private float volume;
 
     private void Start()
     {
-        Volume.value = GameSettings.Instance.Volume;
+        volume = GameSettings.Instance.Volume;
+        VolumeSlider.value = volume;
+        TitleAudio.Play();
+    }
+
+    public void UpdateTitleVolume(float newVolume)
+    {
+        TitleAudio.UpdateVolume(newVolume);
     }
 
     public void PlayGame()
     {
+        TitleAudio.Stop();
         SceneManager.LoadScene("Level 1");
-    }
-
-    public void AdjustVolume()
-    {
-
     }
 
     public void QuitGame()
     {
-        Debug.Log("quitting game");
+        Debug.Log("Quitting game");
         Application.Quit();
     }
 }
