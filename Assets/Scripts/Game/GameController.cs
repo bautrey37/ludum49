@@ -7,35 +7,37 @@ public class GameController : MonoBehaviour
     public int Value = 0;
     public AudioClipGroup BackgroundMusic;
 
+    private SceneLoader sceneLoader;
     private bool endLevel = false;
 
     private void Awake()
     {
         Events.OnSetValue += OnSetValue;
         Events.OnRequestValue += OnRequestValue;
-        Events.OnEndLevel += OnEndLevel;
+        Events.OnPlayerDies += OnPlayerDies;
 
         // BackgroundMusic.PlayBackground();
-    }
-
-    public void Update()
-    {
-        if (endLevel == true)
-        {
-            // BackgroundMusic.StopBackground();
-        }
     }
 
     public void Start()
     {
         Events.SetValue(Value);
+        sceneLoader = gameObject.GetComponent<SceneLoader>();
+    }
+
+    public void Update()
+    {
+        // if (endLevel == true)
+        // {
+            // BackgroundMusic.StopBackground();
+        // }
     }
 
     private void OnDestroy()
     {
         Events.OnSetValue -= OnSetValue;
         Events.OnRequestValue -= OnRequestValue;
-        Events.OnEndLevel -= OnEndLevel;
+        Events.EndLevel -= EndLevel;
     }
 
     private void OnSetValue(int amount)
@@ -48,14 +50,11 @@ public class GameController : MonoBehaviour
         return Value;
     }
 
-    void OnHealthDestroyed(GameObject go)
+    private void OnEndLevel(bool isWin)
     {
-
-    }
-
-    void OnEndLevel(bool isWin)
-    {
-        endLevel = true;
+        // restart scene
+        sceneLoader.restartScene(SceneManager.GetActiveScene());
+        endLevel = isWin;
     }
 
 }

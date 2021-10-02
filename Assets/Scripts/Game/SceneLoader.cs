@@ -35,4 +35,9 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene("Menu");
     }
 
+    public void restartScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+    }
+
 }
