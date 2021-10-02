@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/AntonMap.unity
     guid: 993321c583e0cac148237df042c838b0
+  - enabled: 1
+    path: Assets/Scenes/Level 1.unity
+    guid: 80e753387ac11664e9bc04014035cb2d
   m_configObjects: {}
