@@ -528,7 +528,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8441986794538683249, guid: 8b07a7fef8b9036fabee154000b80016, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8441986794538683249, guid: 8b07a7fef8b9036fabee154000b80016, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1021,6 +1021,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 620105436443098383, guid: fef1fd932ac6215bea4dcf85bb306b5a, type: 3}
+      propertyPath: BackgroundMusic
+      value: 
+      objectReference: {fileID: 11400000, guid: a59f785797162f21aa0a3e376aaf3077, type: 2}
     - target: {fileID: 3209606927422399524, guid: fef1fd932ac6215bea4dcf85bb306b5a, type: 3}
       propertyPath: m_Name
       value: GameManager
@@ -1069,6 +1073,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3750944807516937330, guid: fef1fd932ac6215bea4dcf85bb306b5a, type: 3}
+      propertyPath: AudioSourcePrefab
+      value: 
+      objectReference: {fileID: 7956972367961938092, guid: 485c3a82621e42778b6a230400c0cafc, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fef1fd932ac6215bea4dcf85bb306b5a, type: 3}
 --- !u!1001 &3590041177421325894

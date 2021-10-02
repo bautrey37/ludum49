@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour
 {
     public int Value = 0;
-    public AudioClipGroup BackgroundMusic;
+    public BackgroundAudio BackgroundMusic;
 
     private SceneLoader sceneLoader;
     private bool endLevel = false;
@@ -18,7 +18,7 @@ public class GameController : MonoBehaviour
         Events.OnEndLevel += OnEndLevel;
 
 
-        // BackgroundMusic.PlayBackground();
+        BackgroundMusic.Play();
     }
 
     public void Start()
@@ -29,10 +29,10 @@ public class GameController : MonoBehaviour
 
     public void Update()
     {
-        // if (endLevel == true)
-        // {
-            // BackgroundMusic.StopBackground();
-        // }
+        if (endLevel == true)
+        {
+            BackgroundMusic.Stop();
+        }
     }
 
     private void OnDestroy()

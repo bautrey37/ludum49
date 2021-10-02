@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Game/AudioClipGroup")]
+[CreateAssetMenu(menuName = "Game/Audio/AudioClipGroup")]
 public class AudioClipGroup : ScriptableObject
 {
     [Range(0, 2)]
@@ -16,7 +16,6 @@ public class AudioClipGroup : ScriptableObject
     public float Cooldown = 0.1f;
 
     public List<AudioClip> Clips;
-    public AudioSource backgroundSource;
 
     private float timestamp;
 
@@ -44,26 +43,4 @@ public class AudioClipGroup : ScriptableObject
         source.clip = Clips[Random.Range(0, Clips.Count)];
         source.Play();
     }
-
-    public void PlayBackground()
-    {
-        if (AudioSourcePool.Instance == null) return;
-        if (Clips.Count <= 0) return;
-
-        backgroundSource = AudioSourcePool.Instance.GetSource();
-        // backgroundSource.volume = GameSettings.Instance.BackgroundVolume;
-        backgroundSource.pitch = 1;
-        backgroundSource.clip = Clips[Random.Range(0, Clips.Count)];
-        backgroundSource.PlayDelayed(1.0f);
-
-        backgroundSource.loop = backgroundSource.isPlaying;
-    }
-
-    // TODO: put background music in a persisted state, not in teh clip file
-    public void StopBackground()
-    {
-        if (backgroundSource == null) return;
-        backgroundSource.Stop();
-    }
-
 }
