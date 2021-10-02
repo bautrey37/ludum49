@@ -9,6 +9,13 @@ public class CameraMovement : MonoBehaviour
     public float MoveSpeed = 1;
     public float EdgeSpeed = 10;
 
+    private float CameraSize = 1.5f;
+
+    void Awake()
+    {
+         Camera.main.orthographicSize = CameraSize;
+    }
+
     void Start()
     {
 
