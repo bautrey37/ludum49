@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BrandonScene.unity
     guid: a30e7304669e326fe84f3a7bf434fdbc
+  - enabled: 1
+    path: Assets/Scenes/AntonMap.unity
+    guid: 993321c583e0cac148237df042c838b0
   m_configObjects: {}
