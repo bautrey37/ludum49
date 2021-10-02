@@ -10,18 +10,34 @@ public class DropdownMenu : MonoBehaviour
     public Button dropUp;
     public Button exit;
     public Button restart;
+    public Button info;
+    public Button cancel;
 
     public GameObject menu;
+    public GameObject tutorial;
     // Start is called before the first frame update
     void Start()
     {
         menu.SetActive(false);
         dropUp.gameObject.SetActive(false);
+        tutorial.SetActive(false);
         
         dropDown.onClick.AddListener(ShowMenu);
         dropUp.onClick.AddListener(CloseMenu);
         exit.onClick.AddListener(StartScene);
         restart.onClick.AddListener(Restart);
+        info.onClick.AddListener(ShowTutorial);
+        cancel.onClick.AddListener(CloseTutorial);
+    }
+
+    private void CloseTutorial()
+    {
+        tutorial.SetActive(false);
+    }
+
+    private void ShowTutorial()
+    {
+        tutorial.SetActive(true);
     }
 
     private void Restart()
