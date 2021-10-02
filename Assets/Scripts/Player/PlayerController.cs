@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     // Different controls settings. Now only has two but we may add more.
-    enum Controls { Normal, Reversed }
+    enum Controls { Normal, Reversed, AxSwapped }
 
     [SerializeField] float moveSpeed = 5f;
     [SerializeField] float rotSpeed = 0.05f;
@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     bool controlsOn = true;
     float horizontal;
     float vertical;
+    int controlsIndex = 0;
     Controls currentControls;
 
     Rigidbody2D rb;
@@ -71,14 +72,26 @@ public class PlayerController : MonoBehaviour
             horizontal = -Input.GetAxis("Horizontal");
             vertical = -Input.GetAxis("Vertical");
         }
+
+        else if (currentControls == Controls.AxSwapped)
+		{
+            horizontal = Input.GetAxis("Vertical");
+            vertical = -Input.GetAxis("Horizontal");
+        }
 	}
 
     // Switch up the controls for extra fun :)
     void ChangeControls()
 	{
-        int choice = Random.Range(0, Controls.GetValues(typeof(Controls)).Length);
+        int choice = 0;
+        do
+        {
+            choice = Random.Range(0, Controls.GetValues(typeof(Controls)).Length);
+
+        } while (choice == controlsIndex);
+
+        controlsIndex = choice;
         currentControls = (Controls)choice;
-        //controlsText.text = currentControls.ToString().ToUpper();
 
         if (currentControls == Controls.Normal)
 		{
@@ -89,6 +102,11 @@ public class PlayerController : MonoBehaviour
         {
             hud.SetControlsReversed();
         }
+
+        else if (currentControls == Controls.AxSwapped)
+		{
+            hud.SetControlsAxSwapped();
+		}
 
     }
 
