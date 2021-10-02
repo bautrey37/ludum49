@@ -20,7 +20,7 @@ public class MainMenu : MonoBehaviour
 
     public void PlayGame()
     {
-        SceneManager.LoadScene("BrandonScene");
+        SceneManager.LoadScene("AntonMap");
     }
 
     public void AdjustVolume()
