@@ -9,7 +9,6 @@ public class PlayerController : MonoBehaviour
     enum Controls { Normal, Reversed }
 
     [SerializeField] float moveSpeed = 5f;
-    [SerializeField] Text controlsText;
     [SerializeField] float rotSpeed = 0.05f;
     [SerializeField] float eulerRot;
     [SerializeField] HUD hud;
@@ -35,9 +34,13 @@ public class PlayerController : MonoBehaviour
 	{
         GetControlsInput();
         eulerRot = transform.eulerAngles.z;
+        float animSpeed = Mathf.Clamp(rb.velocity.magnitude, 0.3f, 1.5f);
+        anim.SetFloat("WalkSpeed", animSpeed);
+        anim.speed = animSpeed;
+
     }
 
-	public void FixedUpdate()
+    public void FixedUpdate()
     {
         if (controlsOn)
 		{
@@ -110,7 +113,6 @@ public class PlayerController : MonoBehaviour
 
 	private void OnCollisionEnter2D(Collision2D collision)
 	{
-      
         anim.SetTrigger("Stagger");
 	}
 
