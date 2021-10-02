@@ -10,7 +10,9 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] float moveSpeed = 5f;
     [SerializeField] Text controlsText;
-    
+    [SerializeField] float rotSpeed = 0.05f;
+    [SerializeField] float eulerRot;
+
     float horizontal;
     float vertical;
     Controls currentControls;
@@ -21,15 +23,15 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         currentControls = Controls.Normal;
-        InvokeRepeating("ChangeControls", 5, 5);
+        InvokeRepeating("ChangeControls", 5, 5); // Call the switch controls function every 5 seconds
     }
 
 	void Update()
 	{
         GetControlsInput();
+        eulerRot = transform.eulerAngles.z;
     }
 
-	// Update is called once per frame
 	public void FixedUpdate()
     {
         // Apply force to player rigidbody
@@ -37,7 +39,12 @@ public class PlayerController : MonoBehaviour
         rb.AddForce(force, ForceMode2D.Force);
 
         // Slowly pivot back to forward facing position if tilted off course
-        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.identity, 0.05f);
+
+
+        if (transform.eulerAngles.z >  180 && transform.eulerAngles.z <= 360)
+	        rb.AddTorque(rotSpeed * Time.deltaTime, ForceMode2D.Force);
+        else if (transform.eulerAngles.z > 0 && transform.eulerAngles.z <= 180) 
+            rb.AddTorque(-rotSpeed * Time.deltaTime, ForceMode2D.Force);
     }
 
     // Apply controls
