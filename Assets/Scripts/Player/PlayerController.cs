@@ -37,6 +37,7 @@ public class PlayerController : MonoBehaviour
         eulerRot = transform.eulerAngles.z;
         float animSpeed = Mathf.Clamp(rb.velocity.magnitude, 0.3f, 1.5f);
         anim.SetFloat("WalkSpeed", animSpeed);
+        anim.SetFloat("SideSpeed", rb.velocity.x);
         anim.speed = animSpeed;
 
     }
