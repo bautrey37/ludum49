@@ -30,6 +30,5 @@ public class HUD : MonoBehaviour
 	{
         anim.SetTrigger("PlayIndicator");
         
-        //anim.Play("controls_animation");
 	}
 }
