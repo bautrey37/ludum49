@@ -5,6 +5,7 @@ using UnityEngine.UIElements;
 
 public class CameraMovement : MonoBehaviour
 {
+    public Transform target;
     public float MoveSpeed = 1;
     public float EdgeSpeed = 10;
 
@@ -22,8 +23,8 @@ public class CameraMovement : MonoBehaviour
 
     void Update()
     {
-        transform.position +=
-            new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * Time.deltaTime * MoveSpeed;
+        transform.position =
+            new Vector3(target.transform.position.x, target.transform.position.y, transform.position.z);
         // Vector3 mousepos = Input.mousePosition;
         //if (mousepos.x <= 0)
         //{
