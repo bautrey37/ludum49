@@ -8,27 +8,32 @@ public class HUD : MonoBehaviour
     [SerializeField] Text[] HUDDirections = new Text[4];
     [SerializeField] Animator anim;
 
-    public void SetControlsNormal()
+    float targetAngle = 0f;
+
+	private void Update()
 	{
-        HUDDirections[0].text = "W";
-        HUDDirections[1].text = "A";
-        HUDDirections[2].text = "S";
-        HUDDirections[3].text = "D";
-        PlayAnimation();
+        float ang = Mathf.LerpAngle(transform.localEulerAngles.z, targetAngle, 0.05f);
+
+        transform.localEulerAngles = new Vector3(0, 0, ang);
+
+        foreach(Text text in HUDDirections)
+		{
+            text.transform.eulerAngles = new Vector3(0, 0, 0);
+		}
+	}
+
+	public void SetControlsNormal()
+	{
+        targetAngle = 0f;
     }
 
     public void SetControlsReversed()
 	{
-        HUDDirections[0].text = "S";
-        HUDDirections[1].text = "D";
-        HUDDirections[2].text = "W";
-        HUDDirections[3].text = "A";
-        PlayAnimation();
+        targetAngle = 180f;
     }
 
-    void PlayAnimation()
+    public void SetControlsAxSwapped()
 	{
-        anim.SetTrigger("PlayIndicator");
-        
-	}
+        targetAngle = -90f;
+    }
 }
