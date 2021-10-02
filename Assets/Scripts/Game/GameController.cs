@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -14,7 +15,8 @@ public class GameController : MonoBehaviour
     {
         Events.OnSetValue += OnSetValue;
         Events.OnRequestValue += OnRequestValue;
-        Events.OnPlayerDies += OnPlayerDies;
+        Events.OnEndLevel += OnEndLevel;
+
 
         // BackgroundMusic.PlayBackground();
     }
@@ -37,7 +39,7 @@ public class GameController : MonoBehaviour
     {
         Events.OnSetValue -= OnSetValue;
         Events.OnRequestValue -= OnRequestValue;
-        Events.EndLevel -= EndLevel;
+        Events.OnEndLevel -= OnEndLevel;
     }
 
     private void OnSetValue(int amount)
@@ -52,8 +54,9 @@ public class GameController : MonoBehaviour
 
     private void OnEndLevel(bool isWin)
     {
+        Debug.Log("End level");
         // restart scene
-        sceneLoader.restartScene(SceneManager.GetActiveScene());
+        sceneLoader.restartScene();
         endLevel = isWin;
     }
 

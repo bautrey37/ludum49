@@ -35,9 +35,10 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene("Menu");
     }
 
-    public void restartScene(string sceneName)
+    public void restartScene()
     {
-        SceneManager.LoadScene(sceneName);
+        Scene scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(scene.name);
     }
 
 }

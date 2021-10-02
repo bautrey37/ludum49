@@ -87,7 +87,7 @@ public class PlayerController : MonoBehaviour
     public void FellInHole()
     {
         // TODO: play dying sound
-
+        Debug.Log("Player has fell in hole");
         Events.EndLevel(false);
     }
 }

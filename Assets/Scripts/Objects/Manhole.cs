@@ -21,7 +21,6 @@ public class Manhole : MonoBehaviour
         PlayerController player = collision.GetComponent<PlayerController>();
         if (player != null)
         {
-            Debug.Log("collision with player!");
             player.FellInHole();
         }
     }
