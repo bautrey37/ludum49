@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Game/Audio/Background")]
@@ -7,27 +8,46 @@ public class BackgroundAudio : ScriptableObject
 {
     public AudioClip backgroundAudioClip;
 
+    private AudioSource source;
+    private float volume = 0.5f;
+
+    public void Update()
+    {
+
+    }
+
     public void Play()
     {
-        if (AudioSourcePool.Instance == null) return;
+        if (backgroundAudioClip == null) return;
 
-        // Volume = GameSettings.Instance.Volume is null ? 1f : GameSettings.Instance.Volume;
+        try
+        {
+            volume = GameSettings.Instance.Volume;
+        }
+        catch (Exception e)
+        {
+            Debug.LogWarning("Game Settings cannot be found");
+            Debug.LogException(e, this);
+        }
 
-        Debug.Log("playing background music");
-        Debug.Log("audio settings" + GameSettings.Instance.Volume);
+        source = AudioSourcePool.Instance.GetSource();
 
-        // backgroundAudioClip = AudioSourcePool.Instance.GetSource();
-        // backgroundAudioClip.volume = 1f;
-        // backgroundAudioClip.pitch = 1;
-        // // backgroundSource.clip = Clips[Random.Range(0, Clips.Count)];
-        // backgroundAudioClip.PlayDelayed(1.0f);
+        source.volume = volume;
+        source.clip = backgroundAudioClip;
+        source.PlayDelayed(1.0f);
 
-        // backgroundAudioClip.loop = backgroundAudioClip.isPlaying;
+        source.loop = source.isPlaying;
+    }
+
+    public void UpdateVolume(float newVolume)
+    {
+        if (source == null) return;
+        source.volume = newVolume;
     }
 
     public void Stop()
     {
-        // if (backgroundAudioClip == null) return;
-        // backgroundAudioClip.Stop();
+        if (source == null) return;
+        source.Stop();
     }
 }
