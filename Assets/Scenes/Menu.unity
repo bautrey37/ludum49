@@ -1139,7 +1139,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4480303175995625444, guid: 00744775ee8d21c2f9c8747ddbea252d, type: 3}
+      - m_Target: {fileID: 250474061}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: QuitGame
         m_Mode: 1
@@ -1481,7 +1481,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4480303175995625444, guid: 00744775ee8d21c2f9c8747ddbea252d, type: 3}
+      - m_Target: {fileID: 250474061}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: PlayGame
         m_Mode: 1
@@ -1699,7 +1699,7 @@ MonoBehaviour:
       - m_Target: {fileID: 250474065}
         m_TargetAssemblyTypeName: GameSettings, Assembly-CSharp
         m_MethodName: set_Volume
-        m_Mode: 4
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
