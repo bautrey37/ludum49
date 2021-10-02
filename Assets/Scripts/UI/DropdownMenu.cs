@@ -1,0 +1,56 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UIElements;
+using Button = UnityEngine.UI.Button;
+
+public class DropdownMenu : MonoBehaviour
+{
+    public Button dropDown;
+    public Button dropUp;
+    public Button exit;
+    public Button restart;
+
+    public GameObject menu;
+    // Start is called before the first frame update
+    void Start()
+    {
+        menu.SetActive(false);
+        dropUp.gameObject.SetActive(false);
+        
+        dropDown.onClick.AddListener(ShowMenu);
+        dropUp.onClick.AddListener(CloseMenu);
+        exit.onClick.AddListener(StartScene);
+        restart.onClick.AddListener(Restart);
+    }
+
+    private void Restart()
+    {
+        
+    }
+
+    private void StartScene()
+    {
+        
+    }
+
+    private void CloseMenu()
+    {
+        dropDown.gameObject.SetActive(true);
+        menu.SetActive(false);
+        dropUp.gameObject.SetActive(false);
+    }
+
+    private void ShowMenu()
+    {
+        dropDown.gameObject.SetActive(false);
+        menu.SetActive(true);
+        dropUp.gameObject.SetActive(true);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+}
