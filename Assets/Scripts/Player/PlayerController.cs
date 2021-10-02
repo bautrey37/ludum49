@@ -13,7 +13,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float rotSpeed = 0.05f;
     [SerializeField] float eulerRot;
     [SerializeField] HUD hud;
+    [SerializeField] Animator anim;
 
+
+    bool controlsOn = true;
     float horizontal;
     float vertical;
     Controls currentControls;
@@ -36,12 +39,14 @@ public class PlayerController : MonoBehaviour
 
 	public void FixedUpdate()
     {
-        // Apply force to player rigidbody
-        Vector2 force = moveSpeed * new Vector2(horizontal, vertical);
-        rb.AddForce(force, ForceMode2D.Force);
-
+        if (controlsOn)
+		{
+            // Apply force to player rigidbody
+            Vector2 force = moveSpeed * new Vector2(horizontal, vertical);
+            rb.AddForce(force, ForceMode2D.Force);
+        }
+        
         // Slowly pivot back to forward facing position if tilted off course
-
 
         if (transform.eulerAngles.z >  180 && transform.eulerAngles.z <= 360)
 	        rb.AddTorque(rotSpeed * Time.deltaTime, ForceMode2D.Force);
@@ -90,4 +95,25 @@ public class PlayerController : MonoBehaviour
         Debug.Log("Player has fell in hole");
         Events.EndLevel(false);
     }
+
+    public IEnumerator Slipped()
+	{
+        controlsOn = false;
+        rb.bodyType = RigidbodyType2D.Static;
+        anim.SetTrigger("Fall");
+
+        yield return new WaitForSeconds(2);
+        anim.SetTrigger("Get Up");
+        rb.bodyType = RigidbodyType2D.Dynamic;
+        controlsOn = true;
+	}
+
+	private void OnCollisionEnter2D(Collision2D collision)
+	{
+      
+        anim.SetTrigger("Stagger");
+	}
+
+
+
 }
