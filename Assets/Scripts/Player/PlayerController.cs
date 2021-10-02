@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
         hud = FindObjectOfType<HUD>();
         rb = GetComponent<Rigidbody2D>();
         currentControls = Controls.Normal;
-        InvokeRepeating("ChangeControls", 5, 8); // Call the switch controls function every 5 seconds
+        InvokeRepeating("ChangeControls", 3, 5); // Call the switch controls function every 5 seconds
     }
 
 	void Update()
