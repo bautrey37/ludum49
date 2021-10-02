@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Text controlsText;
     [SerializeField] float rotSpeed = 0.05f;
     [SerializeField] float eulerRot;
+    [SerializeField] HUD hud;
 
     float horizontal;
     float vertical;
@@ -21,6 +22,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        hud = FindObjectOfType<HUD>();
         rb = GetComponent<Rigidbody2D>();
         currentControls = Controls.Normal;
         InvokeRepeating("ChangeControls", 5, 5); // Call the switch controls function every 5 seconds
@@ -68,6 +70,17 @@ public class PlayerController : MonoBehaviour
 	{
         int choice = Random.Range(0, Controls.GetValues(typeof(Controls)).Length);
         currentControls = (Controls)choice;
-        controlsText.text = currentControls.ToString().ToUpper();
+        //controlsText.text = currentControls.ToString().ToUpper();
+
+        if (currentControls == Controls.Normal)
+		{
+            hud.SetControlsNormal();
+        }
+        
+        else if (currentControls == Controls.Reversed)
+        {
+            hud.SetControlsReversed();
+        }
+
     }
 }
