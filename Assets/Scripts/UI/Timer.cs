@@ -1,4 +1,5 @@
 
+using TMPro;
 using UnityEngine;
 
 using UnityEngine.UI;
@@ -6,7 +7,7 @@ using UnityEngine.UI;
 public class Timer : MonoBehaviour
 {
     public static Timer Instance;
-    public Text timeText;
+    public TextMeshProUGUI timeText;
     public float timeRemaining = 360;
     private bool timerIsRunning = false;
 
