@@ -17,7 +17,7 @@ public class CameraMovement : MonoBehaviour
     {
         transform.position +=
             new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * Time.deltaTime * MoveSpeed;
-        Vector3 mousepos = Input.mousePosition;
+        // Vector3 mousepos = Input.mousePosition;
         //if (mousepos.x <= 0)
         //{
         //    transform.position += new Vector3(-1, 0) * Time.deltaTime * EdgeSpeed;
