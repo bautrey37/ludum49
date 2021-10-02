@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3590041177276772289
+--- !u!1 &2156445892894611746
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,38 +8,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3590041177276772300}
-  - component: {fileID: 3590041177276772303}
-  - component: {fileID: 3590041177276772302}
-  - component: {fileID: 3382958281451076000}
+  - component: {fileID: 6812261357164564167}
+  - component: {fileID: 8256162252690427114}
+  - component: {fileID: 7566739408092189367}
+  - component: {fileID: 6019403753730575381}
   m_Layer: 0
-  m_Name: Manhole
+  m_Name: Banana Peel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3590041177276772300
+--- !u!4 &6812261357164564167
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3590041177276772289}
+  m_GameObject: {fileID: 2156445892894611746}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.08, y: 8.12, z: 0}
-  m_LocalScale: {x: 2.4847, y: 2.4847, z: 2.4847}
+  m_LocalPosition: {x: -1.85, y: 18.74, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &3590041177276772303
+--- !u!212 &8256162252690427114
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3590041177276772289}
+  m_GameObject: {fileID: 2156445892894611746}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -70,10 +70,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1443278429
-  m_SortingLayer: 2
+  m_SortingLayerID: -168567769
+  m_SortingLayer: 3
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: c565cc3ecf7564e20b2ccbb38b1e6381, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 96ad30fabe1e7faea858273032aa718c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -84,31 +84,41 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &3590041177276772302
-CircleCollider2D:
+--- !u!61 &7566739408092189367
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3590041177276772289}
+  m_GameObject: {fileID: 2156445892894611746}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.57, y: 0}
+  m_Offset: {x: -0.02155745, y: 0.010778427}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.6666667, y: 2.6666667}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 0.78
---- !u!114 &3382958281451076000
+  m_Size: {x: 0.33842707, y: 0.27306676}
+  m_EdgeRadius: 0
+--- !u!114 &6019403753730575381
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3590041177276772289}
+  m_GameObject: {fileID: 2156445892894611746}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2f14eb8e9f7d51059ca5f78b28d2502, type: 3}
+  m_Script: {fileID: 11500000, guid: 0f3180735f061064e81b0649c2f90608, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
