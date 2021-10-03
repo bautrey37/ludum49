@@ -31,6 +31,7 @@ public class Timer : MonoBehaviour
             {
                 timeRemaining = 0;
                 timerIsRunning = false;
+                Debug.Log("Player ran out of time");
                 Events.EndLevel(false);
             }
             DisplayTime(timeRemaining);

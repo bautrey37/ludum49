@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
 
     public AudioClipGroup AudioNotification;
     public AudioClipGroup AudioBottle;
+    public AudioClipGroup AudioSlip;
+    public AudioClipGroup AudioBump;
 
     bool controlsOn = true;
     float horizontal;
@@ -130,7 +132,7 @@ public class PlayerController : MonoBehaviour
         controlsOn = false;
         rb.bodyType = RigidbodyType2D.Static;
         anim.SetTrigger("Fall");
-
+        AudioSlip.Play();
         yield return new WaitForSeconds(0.5f);
         AudioBottle.Play();
         yield return new WaitForSeconds(1.5f);
@@ -145,16 +147,19 @@ public class PlayerController : MonoBehaviour
         controlsOn = false;
         rb.bodyType = RigidbodyType2D.Static;
         anim.SetTrigger("Fall");
+        AudioSlip.Play();
         yield return new WaitForSeconds(0.5f);
         AudioBottle.Play();
         yield return new WaitForSeconds(1.5f);
 
+        Debug.Log("Player Died");
         Events.EndLevel(false);
     }
 
 	private void OnCollisionEnter2D(Collision2D collision)
 	{
         anim.SetTrigger("Stagger");
+        AudioBump.Play();
 	}
 
     public void GoHome()
