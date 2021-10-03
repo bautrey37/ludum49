@@ -56,9 +56,9 @@ public class PlayerController : MonoBehaviour
         // Slowly pivot back to forward facing position if tilted off course
 
         if (transform.eulerAngles.z >  180 && transform.eulerAngles.z <= 360)
-	        rb.AddTorque(-rotSpeed * Time.deltaTime, ForceMode2D.Force);
+	        rb.AddTorque(rotSpeed * Time.deltaTime, ForceMode2D.Force);
         else if (transform.eulerAngles.z > 0 && transform.eulerAngles.z <= 180)
-            rb.AddTorque(rotSpeed * Time.deltaTime, ForceMode2D.Force);
+            rb.AddTorque(-rotSpeed * Time.deltaTime, ForceMode2D.Force);
     }
 
     // Apply controls
