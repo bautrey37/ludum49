@@ -14,7 +14,8 @@ public class GameController : MonoBehaviour
     {
         // Events.OnSetValue += OnSetValue;
         // Events.OnRequestValue += OnRequestValue;
-        Events.OnEndLevel += OnEndLevel;
+        // Events.OnEndLevel += OnEndLevel;
+        Events.OnIsPlayerPlaying += OnIsPlayerPlaying;
 
         BackgroundAudio.Play();
     }
@@ -34,15 +35,28 @@ public class GameController : MonoBehaviour
     {
         // Events.OnSetValue -= OnSetValue;
         // Events.OnRequestValue -= OnRequestValue;
-        Events.OnEndLevel -= OnEndLevel;
+        // Events.OnEndLevel -= OnEndLevel;
+        Events.OnIsPlayerPlaying -= OnIsPlayerPlaying;
     }
 
-    private void OnEndLevel(bool isWin)
+    private void OnIsPlayerPlaying(bool playing)
     {
-        // sceneLoader.RestartScene();
-        endLevel = isWin;
-        BackgroundAudio.Stop();
+        if (playing == false)
+        {
+            BackgroundAudio.Stop();
+        }
+        else
+        {
+            BackgroundAudio.Play();
+        }
     }
+
+    // private void OnEndLevel(bool isWin)
+    // {
+    //     // sceneLoader.RestartScene();
+    //     endLevel = isWin;
+
+    // }
 
     // private void OnSetValue(int amount)
     // {
