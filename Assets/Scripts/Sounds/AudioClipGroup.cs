@@ -40,10 +40,11 @@ public class AudioClipGroup : ScriptableObject
 
         timestamp = Time.time + Cooldown;
 
-        source.volume = Random.Range(VolumeMin, VolumeMax);
+        // source.volume = Random.Range(VolumeMin, VolumeMax);
         source.pitch = Random.Range(PitchMin, PitchMax);
-        source.clip = Clips[Random.Range(0, Clips.Count)];
-        source.Play();
+        // source.clip = Clips[Random.Range(0, Clips.Count)];
+        // Play()
+        source.PlayOneShot(Clips[Random.Range(0, Clips.Count)], Random.Range(VolumeMin, VolumeMax));
 
     }
 

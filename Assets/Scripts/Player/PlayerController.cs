@@ -120,7 +120,7 @@ public class PlayerController : MonoBehaviour
             Events.IsPlayerPlaying(false);
             Events.EndLevel(false);
             StartCoroutine("Died");
-            // AudioDead.Play();
+            AudioDead.Play();
         }
         isDead = true;
     }
