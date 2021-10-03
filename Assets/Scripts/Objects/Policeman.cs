@@ -5,7 +5,7 @@ using UnityEngine;
 public class Policeman : MonoBehaviour
 {
     [SerializeField] Collider2D fov;
-
+	[SerializeField] float speed_var = 3f;
 	float rotationTarget = 0;
 	float[] rotations = { 0f, -60f, 0f, 60f };
 	int rotIndex = 0;
@@ -13,7 +13,7 @@ public class Policeman : MonoBehaviour
 	private void Start()
 	{
 		//fov = GetComponentInChildren<Collider2D>();
-		InvokeRepeating("SetRotationTarget", 0, 1.5f);
+		InvokeRepeating("SetRotationTarget", 0, speed_var);
 	}
 
 	private void Update()

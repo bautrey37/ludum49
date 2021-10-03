@@ -11,11 +11,14 @@ public class Car : MonoBehaviour
 
     Transform targetPos;
     float rot = 0;
+    SpriteRenderer spriteRenderer;
 
     // Start is called before the first frame update
     void Start()
     {
         targetPos = wayPoint1;
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+
     }
 
     // Update is called once per frame
@@ -25,17 +28,17 @@ public class Car : MonoBehaviour
         if (Mathf.Abs(carBody.localPosition.x - wayPoint1.localPosition.x) < 0.5f)
 		{
             targetPos = wayPoint2;
-            rot = 0;
+            spriteRenderer.flipX = true;
+
 		}
 
         else if (Mathf.Abs(carBody.localPosition.x - wayPoint2.localPosition.x) < 0.5f)
 		{
             targetPos = wayPoint1;
-            rot = 180f;
+            spriteRenderer.flipX = false;
 		}
 
         carBody.position = Vector2.MoveTowards(carBody.position, targetPos.position, speed * Time.deltaTime);
-        carBody.localEulerAngles = new Vector3(0, 0, rot);
     }
 
 	private void OnCollisionEnter2D(Collision2D collision)
