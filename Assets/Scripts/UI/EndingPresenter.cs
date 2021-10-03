@@ -7,42 +7,54 @@ public class EndingPresenter : MonoBehaviour
     public GameObject EndGamePanel;
     public GameObject SuccessGamePanel;
 
+    public AudioClipGroup AudioDead;
+    public AudioClipGroup AudioWin;
+
+    private bool isWin;
+    private SceneLoader sceneLoader;
+
     private void Awake()
     {
-        gameObject.SetActive(false);
         EndGamePanel.SetActive(false);
         SuccessGamePanel.SetActive(false);
+        // Events.OnEndLevel += OnEndLevel;
+    }
 
-        Events.OnEndLevel += OnEndLevel;
+    private void Start()
+    {
+        sceneLoader = gameObject.GetComponent<SceneLoader>();
+        isWin = Events.winGame;
+        Debug.Log("Showing game condition: " + isWin);
+        if (isWin)
+        {
+            WinGame();
+        } else
+        {
+            LoseGame();
+        }
     }
 
     private void OnDestroy()
     {
-        Events.OnEndLevel -= OnEndLevel;
+        // Events.OnEndLevel -= OnEndLevel;
     }
 
-    // Only one level at the moment
-    void OnEndLevel(bool isWin)
-    {
-        Debug.Log("EndingPresenter OnEndLevel");
-        if (isWin)
-        {
-            WinLevel();
-        } else
-        {
-            LoseLevel();
-        }
-    }
-
-    void WinLevel()
+    void WinGame()
     {
         SuccessGamePanel.SetActive(true);
-        gameObject.SetActive(true);
+
+        // AudioWin.Play();
     }
 
-    void LoseLevel()
+    void LoseGame()
     {
         EndGamePanel.SetActive(true);
-        gameObject.SetActive(true);
+
+        AudioDead.Play();
+    }
+
+    public void GoToMenu()
+    {
+        sceneLoader.LoadMenu();
     }
 }
