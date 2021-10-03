@@ -7,6 +7,8 @@ public static class Events
 {
     public static event Action<bool> OnEndLevel;
     public static void EndLevel(bool isWin) => OnEndLevel?.Invoke(isWin);
+    public static event Action<bool> OnIsPlayerPlaying;
+    public static void IsPlayerPlaying(bool isPlaying) => OnIsPlayerPlaying?.Invoke(isPlaying);
 
 
     // public static event Action onPlayerDies;

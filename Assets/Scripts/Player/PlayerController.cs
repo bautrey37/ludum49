@@ -114,11 +114,13 @@ public class PlayerController : MonoBehaviour
 
     public void FellInHole()
     {
-        Debug.Log("Fell in hole. isDead: " + isDead);
+        Debug.Log("Fell in hole");
         if (isDead == false)
         {
+            Events.IsPlayerPlaying(false);
             Events.EndLevel(false);
             StartCoroutine("Died");
+            // AudioDead.Play();
         }
         isDead = true;
     }
@@ -142,8 +144,6 @@ public class PlayerController : MonoBehaviour
         // TODO: change type of animation?
         anim.SetTrigger("Fall");
         yield return new WaitForSeconds(1);
-        // TODO: sound is repeating somehow?
-        AudioDead.Play();
     }
 
 	private void OnCollisionEnter2D(Collision2D collision)
