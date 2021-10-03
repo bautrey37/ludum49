@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Animator anim;
 
     public AudioClipGroup AudioNotification;
+    public AudioClipGroup AudioBottle;
 
     bool controlsOn = true;
     float horizontal;
@@ -130,7 +131,10 @@ public class PlayerController : MonoBehaviour
         rb.bodyType = RigidbodyType2D.Static;
         anim.SetTrigger("Fall");
 
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(0.5f);
+        AudioBottle.Play();
+        yield return new WaitForSeconds(1.5f);
+
         anim.SetTrigger("Get Up");
         rb.bodyType = RigidbodyType2D.Dynamic;
         controlsOn = true;
@@ -140,10 +144,11 @@ public class PlayerController : MonoBehaviour
     {
         controlsOn = false;
         rb.bodyType = RigidbodyType2D.Static;
-        // TODO: change type of animation?
         anim.SetTrigger("Fall");
-        // TODO: play falling sound
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(0.5f);
+        AudioBottle.Play();
+        yield return new WaitForSeconds(1.5f);
+
         Events.EndLevel(false);
     }
 
@@ -151,5 +156,10 @@ public class PlayerController : MonoBehaviour
 	{
         anim.SetTrigger("Stagger");
 	}
+
+    public void GoHome()
+    {
+        Events.EndLevel(true);
+    }
 
 }
