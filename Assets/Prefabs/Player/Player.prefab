@@ -94,7 +94,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  rotSpeed: 20
+  rotSpeed: 50
   eulerRot: 0
   hud: {fileID: 0}
   anim: {fileID: 4356318023073384684}
