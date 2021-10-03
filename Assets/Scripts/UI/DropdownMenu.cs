@@ -15,19 +15,24 @@ public class DropdownMenu : MonoBehaviour
 
     public GameObject menu;
     public GameObject tutorial;
+
+    private SceneLoader sceneLoader;
+
     // Start is called before the first frame update
     void Start()
     {
         menu.SetActive(false);
         dropUp.gameObject.SetActive(false);
         tutorial.SetActive(false);
-        
+
         dropDown.onClick.AddListener(ShowMenu);
         dropUp.onClick.AddListener(CloseMenu);
         exit.onClick.AddListener(StartScene);
         restart.onClick.AddListener(Restart);
         info.onClick.AddListener(ShowTutorial);
         cancel.onClick.AddListener(CloseTutorial);
+
+        sceneLoader = gameObject.GetComponent<SceneLoader>();
     }
 
     private void CloseTutorial()
@@ -42,12 +47,12 @@ public class DropdownMenu : MonoBehaviour
 
     private void Restart()
     {
-        
+        sceneLoader.RestartScene();
     }
 
     private void StartScene()
     {
-        
+        sceneLoader.LoadMenu();
     }
 
     private void CloseMenu()
@@ -67,6 +72,6 @@ public class DropdownMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
