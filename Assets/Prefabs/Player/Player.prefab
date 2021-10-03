@@ -98,6 +98,7 @@ MonoBehaviour:
   eulerRot: 0
   hud: {fileID: 0}
   anim: {fileID: 4356318023073384684}
+  AudioDead: {fileID: 11400000, guid: e41be4ab93aa8afc9ac39218f572f74c, type: 2}
 --- !u!1 &4356318023073384687
 GameObject:
   m_ObjectHideFlags: 0

@@ -27,10 +27,7 @@ public class GameController : MonoBehaviour
 
     public void Update()
     {
-        if (endLevel == true)
-        {
-            BackgroundAudio.Stop();
-        }
+
     }
 
     private void OnDestroy()
@@ -42,10 +39,9 @@ public class GameController : MonoBehaviour
 
     private void OnEndLevel(bool isWin)
     {
-        Debug.Log("End level");
-
-        sceneLoader.RestartScene();
+        // sceneLoader.RestartScene();
         endLevel = isWin;
+        BackgroundAudio.Stop();
     }
 
     // private void OnSetValue(int amount)
