@@ -20,9 +20,15 @@ public class HUD : MonoBehaviour
 		{
             text.transform.eulerAngles = new Vector3(0, 0, 0);
 		}
-	}
 
-	public void SetControlsNormal()
+
+        HUDDirections[0].GetComponent<Outline>().enabled = Input.GetKey(KeyCode.W);
+        HUDDirections[1].GetComponent<Outline>().enabled = Input.GetKey(KeyCode.A);
+        HUDDirections[2].GetComponent<Outline>().enabled = Input.GetKey(KeyCode.S);
+        HUDDirections[3].GetComponent<Outline>().enabled = Input.GetKey(KeyCode.D);
+    }
+
+    public void SetControlsNormal()
 	{
         targetAngle = 0f;
     }
