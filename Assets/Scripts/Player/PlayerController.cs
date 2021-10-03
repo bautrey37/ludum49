@@ -151,6 +151,4 @@ public class PlayerController : MonoBehaviour
         anim.SetTrigger("Stagger");
 	}
 
-
-
 }
