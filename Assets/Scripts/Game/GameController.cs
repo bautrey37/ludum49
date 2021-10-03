@@ -5,10 +5,12 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
     // public int Value = 0;
-    public BackgroundAudio BackgroundAudio;
+    
 
     private SceneLoader sceneLoader;
     private bool endLevel = false;
+
+    public BackgroundAudio BackgroundAudio;
 
     private void Awake()
     {
@@ -25,6 +27,10 @@ public class GameController : MonoBehaviour
         // Events.SetValue(Value);
         sceneLoader = gameObject.GetComponent<SceneLoader>(); 
         BackgroundAudio.Play();
+        if (BackgroundAudio == null)
+        {
+            BackgroundAudio = gameObject.GetComponent<BackgroundAudio>();
+        }
     }
 
     public void Update()
