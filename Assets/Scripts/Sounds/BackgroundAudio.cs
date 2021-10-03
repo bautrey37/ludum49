@@ -26,8 +26,7 @@ public class BackgroundAudio : ScriptableObject
         }
         catch (Exception e)
         {
-            Debug.LogWarning("Game Settings cannot be found");
-            Debug.LogException(e, this);
+            Debug.LogWarning("Game Settings cannot be found; Your playing a scene without going through menu.");
         }
 
         source = AudioSourcePool.Instance.GetSource();

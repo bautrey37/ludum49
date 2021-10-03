@@ -14,12 +14,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField] HUD hud;
     [SerializeField] Animator anim;
 
+    public AudioClipGroup AudioDead;
 
     bool controlsOn = true;
     float horizontal;
     float vertical;
     int controlsIndex = 0;
     Controls currentControls;
+    bool isDead = false;
 
     Rigidbody2D rb;
 
@@ -50,7 +52,7 @@ public class PlayerController : MonoBehaviour
             Vector2 force = moveSpeed * new Vector2(horizontal, vertical);
             rb.AddForce(force, ForceMode2D.Force);
         }
-        
+
         // Slowly pivot back to forward facing position if tilted off course
 
         if (transform.eulerAngles.z >  180 && transform.eulerAngles.z <= 360)
@@ -98,7 +100,7 @@ public class PlayerController : MonoBehaviour
 		{
             hud.SetControlsNormal();
         }
-        
+
         else if (currentControls == Controls.Reversed)
         {
             hud.SetControlsReversed();
@@ -108,14 +110,17 @@ public class PlayerController : MonoBehaviour
 		{
             hud.SetControlsAxSwapped();
 		}
-
     }
 
     public void FellInHole()
     {
-        // TODO: play dying sound
-        Debug.Log("Player has fell in hole");
-        Events.EndLevel(false);
+        Debug.Log("Fell in hole. isDead: " + isDead);
+        if (isDead == false)
+        {
+            Events.EndLevel(false);
+            StartCoroutine("Died");
+        }
+        isDead = true;
     }
 
     public IEnumerator Slipped()
@@ -129,6 +134,17 @@ public class PlayerController : MonoBehaviour
         rb.bodyType = RigidbodyType2D.Dynamic;
         controlsOn = true;
 	}
+
+    public IEnumerator Died()
+    {
+        controlsOn = false;
+        rb.bodyType = RigidbodyType2D.Static;
+        // TODO: change type of animation?
+        anim.SetTrigger("Fall");
+        yield return new WaitForSeconds(1);
+        // TODO: sound is repeating somehow?
+        AudioDead.Play();
+    }
 
 	private void OnCollisionEnter2D(Collision2D collision)
 	{

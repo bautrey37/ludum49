@@ -16,9 +16,9 @@ public class AudioClipGroup : ScriptableObject
     public float Cooldown = 0.1f;
 
     public List<AudioClip> Clips;
-    // public AudioSource backgroundSource;
 
     private float timestamp;
+    private float volume;
 
     private void OnEnable()
     {
@@ -34,36 +34,17 @@ public class AudioClipGroup : ScriptableObject
 
     public void Play(AudioSource source)
     {
+        Debug.Log("Play Sound");
         if (timestamp > Time.time) return;
         if (Clips.Count <= 0) return;
 
         timestamp = Time.time + Cooldown;
 
-        // source.volume = Random.Range(VolumeMin, VolumeMax) * GameSettings.Instance.EffectsVolume;
+        source.volume = Random.Range(VolumeMin, VolumeMax);
         source.pitch = Random.Range(PitchMin, PitchMax);
         source.clip = Clips[Random.Range(0, Clips.Count)];
         source.Play();
+
     }
-
-    // public void PlayBackground()
-    // {
-    //     if (AudioSourcePool.Instance == null) return;
-    //     if (Clips.Count <= 0) return;
-
-    //     backgroundSource = AudioSourcePool.Instance.GetSource();
-    //     // backgroundSource.volume = GameSettings.Instance.BackgroundVolume;
-    //     backgroundSource.pitch = 1;
-    //     backgroundSource.clip = Clips[Random.Range(0, Clips.Count)];
-    //     backgroundSource.PlayDelayed(1.0f);
-
-    //     backgroundSource.loop = backgroundSource.isPlaying;
-    // }
-
-    // // TODO: put background music in a persisted state, not in teh clip file
-    // public void StopBackground()
-    // {
-    //     if (backgroundSource == null) return;
-    //     backgroundSource.Stop();
-    // }
 
 }
