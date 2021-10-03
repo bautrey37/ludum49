@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] HUD hud;
     [SerializeField] Animator anim;
 
-    public AudioClipGroup AudioDead;
+    public AudioClipGroup AudioNotification;
 
     bool controlsOn = true;
     float horizontal;
@@ -110,6 +110,7 @@ public class PlayerController : MonoBehaviour
 		{
             hud.SetControlsAxSwapped();
 		}
+        AudioNotification.Play();
     }
 
     public void FellInHole()
@@ -117,10 +118,8 @@ public class PlayerController : MonoBehaviour
         Debug.Log("Fell in hole");
         if (isDead == false)
         {
-            Events.IsPlayerPlaying(false);
-            Events.EndLevel(false);
+            Events.IsPlayerPlaying(false); // stops backgrouns audio
             StartCoroutine("Died");
-            AudioDead.Play();
         }
         isDead = true;
     }
@@ -143,7 +142,9 @@ public class PlayerController : MonoBehaviour
         rb.bodyType = RigidbodyType2D.Static;
         // TODO: change type of animation?
         anim.SetTrigger("Fall");
-        yield return new WaitForSeconds(1);
+        // TODO: play falling sound
+        yield return new WaitForSeconds(2);
+        Events.EndLevel(false);
     }
 
 	private void OnCollisionEnter2D(Collision2D collision)

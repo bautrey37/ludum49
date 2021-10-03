@@ -78104,6 +78104,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4356318022287192568, guid: e0f869bf0455c284e9e7ab47de52ffd8, type: 3}
+      propertyPath: AudioNotification
+      value: 
+      objectReference: {fileID: 11400000, guid: a21f97adb23455955a99c945728bad37, type: 2}
     - target: {fileID: 4356318022287192572, guid: e0f869bf0455c284e9e7ab47de52ffd8, type: 3}
       propertyPath: m_Name
       value: Player

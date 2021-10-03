@@ -5,8 +5,16 @@ using UnityEngine;
 
 public static class Events
 {
+    private static bool _winGame;
+    public static bool winGame
+    {
+        get { return _winGame; }
+        set { _winGame = value; }
+    }
+
     public static event Action<bool> OnEndLevel;
     public static void EndLevel(bool isWin) => OnEndLevel?.Invoke(isWin);
+
     public static event Action<bool> OnIsPlayerPlaying;
     public static void IsPlayerPlaying(bool isPlaying) => OnIsPlayerPlaying?.Invoke(isPlaying);
 
