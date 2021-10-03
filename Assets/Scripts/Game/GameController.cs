@@ -17,13 +17,14 @@ public class GameController : MonoBehaviour
         Events.OnEndLevel += OnEndLevel;
         Events.OnIsPlayerPlaying += OnIsPlayerPlaying;
 
-        BackgroundAudio.Play();
+        
     }
 
     public void Start()
     {
         // Events.SetValue(Value);
-        sceneLoader = gameObject.GetComponent<SceneLoader>();
+        sceneLoader = gameObject.GetComponent<SceneLoader>(); 
+        BackgroundAudio.Play();
     }
 
     public void Update()
