@@ -53,7 +53,7 @@ public class GameController : MonoBehaviour
 
     private void OnEndLevel(bool isWin)
     {
-        Events.winGame = false;
+        Events.winGame = isWin;
         sceneLoader.LoadEndGame();
         endLevel = isWin;
     }

@@ -157,4 +157,9 @@ public class PlayerController : MonoBehaviour
         anim.SetTrigger("Stagger");
 	}
 
+    public void GoHome()
+    {
+        Events.EndLevel(true);
+    }
+
 }
