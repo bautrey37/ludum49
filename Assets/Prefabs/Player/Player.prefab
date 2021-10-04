@@ -12,10 +12,8 @@ GameObject:
   - component: {fileID: 4356318022287192571}
   - component: {fileID: 4356318022287192570}
   - component: {fileID: 4356318022287192568}
-  - component: {fileID: 1778441427}
   - component: {fileID: 1778441431}
   - component: {fileID: 2642054265423961915}
-  - component: {fileID: 4402325989802123270}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -106,23 +104,6 @@ MonoBehaviour:
   AudioBottle: {fileID: 11400000, guid: 8cb40ec898f2821b9974f3fd9e950ebb, type: 2}
   AudioSlip: {fileID: 11400000, guid: 8113248ba9f17e6e99ae42110d9d0809, type: 2}
   AudioBump: {fileID: 11400000, guid: 7ba259e4870fe37c08f000cab4878dcc, type: 2}
---- !u!114 &1778441427
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4356318022287192572}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b7923aeb51efa5328007602da0ec792, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 4356318022287192573}
-  background_tile_map: {fileID: 0}
-  pathway_tile_map: {fileID: 0}
-  grass_sound: {fileID: 8300000, guid: c4d362230b3135e8b8dc01ee5c43a0b8, type: 3}
-  pavement_sound: {fileID: 8300000, guid: 5b4b5c88e88fd1e93920906fb4caf7c2, type: 3}
 --- !u!114 &1778441431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,21 +136,6 @@ MonoBehaviour:
   pathway_tile_map: {fileID: 0}
   grass_sound: {fileID: 8300000, guid: c4d362230b3135e8b8dc01ee5c43a0b8, type: 3}
   pavement_sound: {fileID: 8300000, guid: 5b4b5c88e88fd1e93920906fb4caf7c2, type: 3}
---- !u!114 &4402325989802123270
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4356318022287192572}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc386597b87c24c68b9222e5095e53c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clip_list:
-  - {fileID: 8300000, guid: 98f6c4f0a05665e9f87109d9171d6ca0, type: 3}
-  - {fileID: 8300000, guid: 787ca966b6089cb42bccef655c2df8a6, type: 3}
 --- !u!1 &4356318023073384687
 GameObject:
   m_ObjectHideFlags: 0

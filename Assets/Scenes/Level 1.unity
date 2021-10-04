@@ -699,6 +699,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d028fd3c7145776579643a70b0bf7663, type: 3}
+--- !u!114 &247778108 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8659555878961021381, guid: 826a4e7b9f4a9f041a183da3e973b21e, type: 3}
+  m_PrefabInstance: {fileID: 937063544}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27171e6584a69424f98f1a17363bf944, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &256595367
 GameObject:
   m_ObjectHideFlags: 0
@@ -109391,14 +109402,6 @@ CompositeCollider2D:
         Y: 1035999900
       - X: 3000032
         Y: 1035999900
-    - - X: -24999758
-        Y: 1038333476
-      - X: -24666624
-        Y: 1038666588
-      - X: -24000100
-        Y: 1038666588
-      - X: -24000100
-        Y: 1038333476
     - - X: -21333092
         Y: 1038333476
       - X: -20999958
@@ -109406,6 +109409,14 @@ CompositeCollider2D:
       - X: -20666766
         Y: 1038666588
       - X: -20666766
+        Y: 1038333476
+    - - X: -24999758
+        Y: 1038333476
+      - X: -24666624
+        Y: 1038666588
+      - X: -24000100
+        Y: 1038666588
+      - X: -24000100
         Y: 1038333476
     - - X: -1999957
         Y: 1038333476
@@ -148837,6 +148848,10 @@ PrefabInstance:
       propertyPath: background_tile_map
       value: 
       objectReference: {fileID: 313021934}
+    - target: {fileID: 4356318022287192568, guid: e0f869bf0455c284e9e7ab47de52ffd8, type: 3}
+      propertyPath: hud
+      value: 
+      objectReference: {fileID: 247778108}
     - target: {fileID: 4356318022287192572, guid: e0f869bf0455c284e9e7ab47de52ffd8, type: 3}
       propertyPath: m_Name
       value: Player
