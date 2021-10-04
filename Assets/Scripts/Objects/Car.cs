@@ -10,7 +10,6 @@ public class Car : MonoBehaviour
     [SerializeField] float speed = 5f;
 
     Transform targetPos;
-    float rot = 0;
     SpriteRenderer spriteRenderer;
 
     // Start is called before the first frame update
