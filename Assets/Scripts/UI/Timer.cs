@@ -13,10 +13,9 @@ public class Timer : MonoBehaviour
 
     private void Start()
     {
-        timerIsRunning = true;
+        // timerIsRunning = false;
         float minutes = Mathf.FloorToInt(timeRemaining / 60);
         float seconds = Mathf.FloorToInt(timeRemaining % 60);
-
     }
 
     void Update()
@@ -46,4 +45,8 @@ public class Timer : MonoBehaviour
         timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 
+    public void StartTimer()
+    {
+        timerIsRunning = true;
+    }
 }

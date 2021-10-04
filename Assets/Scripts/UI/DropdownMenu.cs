@@ -16,12 +16,16 @@ public class DropdownMenu : MonoBehaviour
     public GameObject menu;
     public GameObject tutorial;
 
+    public PlayerController player;
+
+    private Timer timer;
     private SceneLoader sceneLoader;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        menu.SetActive(false);
+        menu.SetActive(true);
         dropUp.gameObject.SetActive(false);
         tutorial.SetActive(false);
 
@@ -33,11 +37,15 @@ public class DropdownMenu : MonoBehaviour
         cancel.onClick.AddListener(CloseTutorial);
 
         sceneLoader = gameObject.GetComponent<SceneLoader>();
+        timer = gameObject.GetComponent<Timer>();
+        ShowTutorial();
     }
 
     private void CloseTutorial()
     {
         tutorial.SetActive(false);
+        timer.StartTimer();
+        player.PlayerCanMove();
     }
 
     private void ShowTutorial()

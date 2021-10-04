@@ -14,7 +14,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/EndGame.unity
     guid: cd4a52a5a94a77189b930538fd1b8aca
-  - enabled: 1
-    path: Assets/Scenes/BrandonScene.unity
-    guid: 2238f03497f10338a8ec01394f7f9839
   m_configObjects: {}

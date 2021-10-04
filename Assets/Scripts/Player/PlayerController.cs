@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     int controlsIndex = 0;
     Controls currentControls;
     bool isDead = false;
+    bool playerCanMove = false;
 
     Rigidbody2D rb;
 
@@ -38,13 +39,15 @@ public class PlayerController : MonoBehaviour
 
 	void Update()
 	{
-        GetControlsInput();
-        eulerRot = transform.eulerAngles.z;
-        float animSpeed = Mathf.Clamp(rb.velocity.magnitude, 0.3f, 1.5f);
-        anim.SetFloat("WalkSpeed", animSpeed);
-        anim.SetFloat("SideSpeed", rb.velocity.x);
-        anim.speed = animSpeed;
-
+        if (playerCanMove)
+        {
+            GetControlsInput();
+            eulerRot = transform.eulerAngles.z;
+            float animSpeed = Mathf.Clamp(rb.velocity.magnitude, 0.3f, 1.5f);
+            anim.SetFloat("WalkSpeed", animSpeed);
+            anim.SetFloat("SideSpeed", rb.velocity.x);
+            anim.speed = animSpeed;
+        }
     }
 
     public void FixedUpdate()
@@ -114,6 +117,11 @@ public class PlayerController : MonoBehaviour
             hud.SetControlsAxSwapped();
 		}
         AudioNotification.Play();
+    }
+
+    public void PlayerCanMove()
+    {
+        playerCanMove = true;
     }
 
     public void FellInHole()
