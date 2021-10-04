@@ -6,6 +6,9 @@ public class AudioManager : MonoBehaviour
 {
     public AudioSource BackGroundMusic;
 
+    private float volumeRatio = 1.0f;
+    private float gameSettingsVolume = 1.0f;
+
     private void Awake()
     {
         Events.OnEndLevel += OnEndLevel;
@@ -25,14 +28,24 @@ public class AudioManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        try
+        {
+            gameSettingsVolume = GameSettings.Instance.Volume;
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogWarning("Game Settings cannot be found; You're playing a scene without going through menu.");
+        }
     }
 
-    public void ChangeBackgroundMusic(AudioClip music)
+    // volume ratio messing something up, not using.
+    public void ChangeBackgroundMusic(AudioClip music, float volumeRatio)
     {
         if (BackGroundMusic.clip.name == music.name) return;
-
         BackGroundMusic.Stop();
         BackGroundMusic.clip = music;
+        BackGroundMusic.volume = 1.0f * gameSettingsVolume;
         BackGroundMusic.Play();
         // BackGroundMusic.loop = BackGroundMusic.isPlaying;
     }

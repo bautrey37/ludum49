@@ -19,6 +19,11 @@ public class MainMenu : MonoBehaviour
 
     public void UpdateTitleVolume(float newVolume)
     {
+        if (AM == null)
+        {
+            Debug.Log("Audio Manager doesn't exist");
+            AM = FindObjectOfType<AudioManager>();
+        }
         AM.UpdateVolume(newVolume);
     }
 

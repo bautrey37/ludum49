@@ -683,6 +683,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NewTrack: {fileID: 8300000, guid: 76d4edaa52f458c7d82966e4af54d6a3, type: 3}
+  VolumeFloat: 1
 --- !u!1 &910716170
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,7 +8,7 @@ public class AudioManagerCheck : MonoBehaviour
 
     void Start()
     {
-        if(FindObjectOfType<AudioManager>()) return;
+        if (FindObjectOfType<AudioManager>()) return;
         else
             Instantiate(AudioManager, transform);
     }
