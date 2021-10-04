@@ -5,7 +5,6 @@ using UnityEngine;
 public class SwitchMusicOnLoad : MonoBehaviour
 {
     public AudioClip NewTrack;
-    public float VolumeFloat = 1.0f;
 
     private AudioManager audioManager;
 
@@ -14,6 +13,6 @@ public class SwitchMusicOnLoad : MonoBehaviour
         audioManager = FindObjectOfType<AudioManager>();
 
         if (NewTrack != null)
-            audioManager.ChangeBackgroundMusic(NewTrack, VolumeFloat);
+            audioManager.ChangeBackgroundMusic(NewTrack);
     }
 }

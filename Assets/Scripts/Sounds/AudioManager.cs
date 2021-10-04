@@ -39,15 +39,14 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    // volume ratio messing something up, not using.
-    public void ChangeBackgroundMusic(AudioClip music, float volumeRatio)
+    public void ChangeBackgroundMusic(AudioClip music)
     {
         if (BackGroundMusic.clip.name == music.name) return;
+        Debug.Log("gameSettingsVolume: " + gameSettingsVolume);
         BackGroundMusic.Stop();
         BackGroundMusic.clip = music;
         BackGroundMusic.volume = 1.0f * gameSettingsVolume;
         BackGroundMusic.Play();
-        // BackGroundMusic.loop = BackGroundMusic.isPlaying;
     }
 
     public void UpdateVolume(float newVolume)
