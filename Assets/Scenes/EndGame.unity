@@ -462,7 +462,7 @@ MonoBehaviour:
   EndGamePanel: {fileID: 1907723519}
   SuccessGamePanel: {fileID: 1466108571}
   AudioDead: {fileID: 11400000, guid: e41be4ab93aa8afc9ac39218f572f74c, type: 2}
-  AudioWin: {fileID: 0}
+  AudioWin: {fileID: 11400000, guid: bed7d9542760d6123908e1bf592ff994, type: 2}
 --- !u!114 &1013516419
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 
+// Old file that probably has problems
 [CreateAssetMenu(menuName = "Game/Audio/Background")]
 public class BackgroundAudio : ScriptableObject
 {
