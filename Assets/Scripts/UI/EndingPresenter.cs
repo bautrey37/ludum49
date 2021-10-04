@@ -17,7 +17,6 @@ public class EndingPresenter : MonoBehaviour
     {
         EndGamePanel.SetActive(false);
         SuccessGamePanel.SetActive(false);
-        // Events.OnEndLevel += OnEndLevel;
     }
 
     private void Start()
@@ -34,22 +33,15 @@ public class EndingPresenter : MonoBehaviour
         }
     }
 
-    private void OnDestroy()
-    {
-        // Events.OnEndLevel -= OnEndLevel;
-    }
-
     void WinGame()
     {
         SuccessGamePanel.SetActive(true);
-
-        // AudioWin.Play();
+        AudioWin.Play();
     }
 
     void LoseGame()
     {
         EndGamePanel.SetActive(true);
-
         AudioDead.Play();
     }
 

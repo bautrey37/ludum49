@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     public Slider VolumeSlider;
-    public BackgroundAudio TitleAudio;
+    public AudioManager AM;
 
     private float volume;
 
@@ -15,17 +15,15 @@ public class MainMenu : MonoBehaviour
     {
         volume = GameSettings.Instance.Volume;
         VolumeSlider.value = volume;
-        TitleAudio.Play();
     }
 
     public void UpdateTitleVolume(float newVolume)
     {
-        TitleAudio.UpdateVolume(newVolume);
+        AM.UpdateVolume(newVolume);
     }
 
     public void PlayGame()
     {
-        TitleAudio.Stop();
         SceneManager.LoadScene("Level 1");
     }
 

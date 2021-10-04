@@ -12,7 +12,9 @@ GameObject:
   - component: {fileID: 4356318022287192571}
   - component: {fileID: 4356318022287192570}
   - component: {fileID: 4356318022287192568}
-  m_Layer: 0
+  - component: {fileID: 1778441427}
+  - component: {fileID: 1778441431}
+  m_Layer: 3
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -98,7 +100,42 @@ MonoBehaviour:
   eulerRot: 0
   hud: {fileID: 0}
   anim: {fileID: 4356318023073384684}
-  AudioDead: {fileID: 11400000, guid: e41be4ab93aa8afc9ac39218f572f74c, type: 2}
+  AudioNotification: {fileID: 11400000, guid: a21f97adb23455955a99c945728bad37, type: 2}
+  AudioBottle: {fileID: 11400000, guid: 8cb40ec898f2821b9974f3fd9e950ebb, type: 2}
+  AudioSlip: {fileID: 11400000, guid: 8113248ba9f17e6e99ae42110d9d0809, type: 2}
+  AudioBump: {fileID: 11400000, guid: 7ba259e4870fe37c08f000cab4878dcc, type: 2}
+--- !u!114 &1778441427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4356318022287192572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b7923aeb51efa5328007602da0ec792, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 4356318022287192573}
+  background_tile_map: {fileID: 0}
+  pathway_tile_map: {fileID: 0}
+  grass_sound: {fileID: 8300000, guid: c4d362230b3135e8b8dc01ee5c43a0b8, type: 3}
+  pavement_sound: {fileID: 8300000, guid: 5b4b5c88e88fd1e93920906fb4caf7c2, type: 3}
+--- !u!114 &1778441431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4356318022287192572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc386597b87c24c68b9222e5095e53c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip_list:
+  - {fileID: 8300000, guid: 98f6c4f0a05665e9f87109d9171d6ca0, type: 3}
+  - {fileID: 8300000, guid: 787ca966b6089cb42bccef655c2df8a6, type: 3}
 --- !u!1 &4356318023073384687
 GameObject:
   m_ObjectHideFlags: 0
@@ -110,7 +147,7 @@ GameObject:
   - component: {fileID: 4356318023073384683}
   - component: {fileID: 4356318023073384682}
   - component: {fileID: 4356318023073384684}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: PlayerSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
